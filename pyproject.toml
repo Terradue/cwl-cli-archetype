@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cwl-cli-archetype"
+dynamic = ["version"]
+description = 'A simple CLI tool to bootstrap a CWL CommandLineTool based project'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "simone.tripodi", email = "simone.tripodi@terradue.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "click>=8.2.1",
+  "loguru",
+  "Jinja2>=3.1.6",
+]
+
+[project.urls]
+Documentation = "https://github.com/Terradue/cwl-cli-archetype#readme"
+Issues = "https://github.com/Terradue/cwl-cli-archetype/issues"
+Source = "https://github.com/Terradue/cwl-cli-archetype"
+
+[project.scripts]
+cwl-cli-archetype = "cwl_cli_archetype.cli:main"
+
+[tool.hatch.version]
+path = "src/cwl_cli_archetype/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/cwl_cli_archetype tests}"
+
+[tool.coverage.run]
+source_pkgs = ["cwl_cli_archetype", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/cwl_cli_archetype/__about__.py",
+]
+
+[tool.coverage.paths]
+cwl_cli_archetype = ["src/cwl_cli_archetype", "*/cwl-cli-archetype/src/cwl_cli_archetype"]
+tests = ["tests", "*/cwl-cli-archetype/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

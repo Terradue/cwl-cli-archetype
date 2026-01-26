@@ -1,0 +1,10 @@
+.project
+.pydevproject
+.settings
+.task
+.venv
+build
+dist
+*.egg-info
+__pycache__
+docs/api
