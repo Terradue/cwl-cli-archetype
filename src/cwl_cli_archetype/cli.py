@@ -18,24 +18,20 @@ from typing import List
 
 import click
 
-@click.command(context_settings={'show_default': True})
+
+@click.command(context_settings={"show_default": True})
 @click.option(
-    '--clt-id',
+    "--clt-id",
     required=True,
     type=click.STRING,
     multiple=True,
-    help="ID(s) of the CommandLineTool"
+    help="ID(s) of the CommandLineTool",
 )
 @click.option(
     "--target-dir",
-    type=click.Path(
-        path_type=Path
-    ),
+    type=click.Path(path_type=Path),
     required=True,
-    help="The output directory path"
+    help="The output directory path",
 )
-def main(
-    clt_id: List[str],
-    target_dir: Path
-):
+def main(clt_id: List[str], target_dir: Path):
     create_archetype(clt_id, target_dir)

@@ -11,3 +11,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+version: '3'
+
+tasks:
+
+  test:
+    desc: Run tests
+    cmds:
+    - hatch run test:test-show-setup
+
+  check:
+    desc: Run code quality checks
+    cmds:
+    - hatch run dev:check
+
+  lint:
+    desc: Run linters
+    cmds:
+    - hatch run dev:lint
