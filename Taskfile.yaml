@@ -12,26 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cwl_cli_archetype import create_archetype
-from pathlib import Path
-from typing import List
+version: '3'
 
-import click
+tasks:
 
+  test:
+    desc: Run tests
+    cmds:
+    - hatch run test:test-show-setup
 
-@click.command(context_settings={"show_default": True})
-@click.option(
-    "--clt-id",
-    required=True,
-    type=click.STRING,
-    multiple=True,
-    help="ID(s) of the CommandLineTool",
-)
-@click.option(
-    "--target-dir",
-    type=click.Path(path_type=Path),
-    required=True,
-    help="The output directory path",
-)
-def main(clt_id: List[str], target_dir: Path):
-    create_archetype(clt_id, target_dir)
+  check:
+    desc: Run code quality checks
+    cmds:
+    - hatch run dev:check
+
+  lint:
+    desc: Run linters
+    cmds:
+    - hatch run dev:lint
