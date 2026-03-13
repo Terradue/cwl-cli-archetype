@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.29.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -25,9 +25,9 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "click>=8.2.1",
-  "loguru",
-  "Jinja2>=3.1.6",
+  "click==8.3.1",
+  "loguru==0.7.3",
+  "Jinja2==3.1.6",
 ]
 
 [project.urls]
@@ -43,7 +43,7 @@ path = "src/cwl_cli_archetype/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
-  "mypy>=1.0.0",
+  "mypy==1.19.1",
 ]
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:src/cwl_cli_archetype tests}"
