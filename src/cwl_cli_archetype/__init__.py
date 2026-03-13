@@ -15,7 +15,6 @@
 from datetime import datetime
 from importlib.metadata import version, PackageNotFoundError
 from jinja2 import Environment, PackageLoader
-from loguru import logger
 from pathlib import Path
 from typing import Any, List, Mapping
 
