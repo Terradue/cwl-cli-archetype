@@ -55,6 +55,6 @@ RUN hatch env prune && \
     hatch env create prod && \
     #rm -fr /app/.git /app/.pytest_cache && \
     rm -fr ~/.local && \
-    ml4floods-cli --help
+    {{clt_id}} --help
 
 WORKDIR /app
