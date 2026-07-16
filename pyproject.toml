@@ -31,7 +31,7 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/Terradue/cwl-cli-archetype#readme"
+Documentation = "https://terradue.github.io/cwl-cli-archetype/"
 Issues = "https://github.com/Terradue/cwl-cli-archetype/issues"
 Source = "https://github.com/Terradue/cwl-cli-archetype"
 
